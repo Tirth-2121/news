@@ -1,0 +1,31 @@
+create table news(
+id number primary key,
+title varchar2(250),
+content clob,
+pdate date,
+category varchar2(30),
+author varchar2(30),
+imgname varchar2(150)
+)
+
+
+create table userdb(
+id number primary key,
+name varchar2(30),
+email varchar2(30),
+password varchar2(30)
+)
+
+ALTER TABLE userdb ADD (urole number)
+
+
+create table role(
+id number primary key,
+role varchar2(10)
+)
+
+
+ALTER TABLE userdb
+ADD CONSTRAINT rol
+FOREIGN KEY (urole)
+REFERENCES role (id);
